@@ -1,0 +1,28 @@
+[package]
+name = "thumbor"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+axum = "0.2" # web server
+anyhow = "1" # handle error
+base64 = "0.13"
+bytes = "1"
+image = "0.23"
+lazy_static = "1"
+lru = "0.6" # lru cache
+percent-encoding = "2" # url encode/decode
+photon-rs = "0.3.1" # image filter
+prost = "0.8" # protobuf
+reqwest = "0.11"
+serde = { version = "1", features = ["derive"] } # serialize/unserialize
+tokio = { version = "1", features = ["full"] } # async
+tower = { version = "0.4", features = ["util", "timeout", "load-shed", "limit"] } # service middleware
+tower-http = { version = "0.1", features = ["add-extension", "compression-full", "trace"] } # http middleware
+tracing = "0.1" # log and trace
+tracing-subscriber = "0.2" # log and trace
+
+[build-dependencies]
+prost-build = "0.8" # protobuf compiler
